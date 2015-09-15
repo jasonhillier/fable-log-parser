@@ -43,6 +43,10 @@
             "Type": "String"
         },
         {
+            "Column": "Message",
+            "Type": "String"
+        },
+        {
             "Column": "SessionID",
             "Type": "String"
         },
@@ -83,6 +87,10 @@
             "Type": "Integer"
         },
         {
+            "Column": "NormalizedDayOfYear",
+            "Type": "Integer"
+        },
+        {
             "Column": "NormalizedHour",
             "Type": "Integer"
         },
@@ -106,6 +114,7 @@
         "LogLevel": 0,
         "LogUTC": null,
         "RequestURL": "",
+        "Message": "",
         "SessionID": "",
         "IDUser": 0,
         "IDCustomer": 0,
@@ -116,6 +125,7 @@
         "NormalizedYear": 0,
         "NormalizedMonth": 0,
         "NormalizedDay": 0,
+        "NormalizedDayOfYear": 0,
         "NormalizedHour": 0,
         "NormalizedMinute": 0,
         "Datum": ""
@@ -154,6 +164,9 @@
             "RequestURL": {
                 "type": "string"
             },
+            "Message": {
+                "type": "string"
+            },
             "SessionID": {
                 "type": "string"
             },
@@ -182,6 +195,9 @@
                 "type": "integer"
             },
             "NormalizedDay": {
+                "type": "integer"
+            },
+            "NormalizedDayOfYear": {
                 "type": "integer"
             },
             "NormalizedHour": {

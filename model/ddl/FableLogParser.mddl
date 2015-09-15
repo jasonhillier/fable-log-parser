@@ -9,27 +9,18 @@ $ServerVersion 12
 #LogLevel
 &LogUTC
 $RequestURL 128
+$Message 200
 $SessionID 24
-#IDUser -> IDUser
-#IDCustomer -> IDCustomer
+#IDUser
+#IDCustomer
 $Source 24
-$IPAddress 12
+$IPAddress 16
 $RequestID 24
 $Action 32
 #NormalizedYear
 #NormalizedMonth
 #NormalizedDay
+#NormalizedDayOfYear
 #NormalizedHour
 #NormalizedMinute
 *Datum
-
-!User
-@IDUser
-%GUIDUser
-#IDCustomer
-$UserFullName
-$UserEmail
-
-!Customer
-@IDCustomer
-%GUIDCustomer

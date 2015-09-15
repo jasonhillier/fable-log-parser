@@ -12,11 +12,9 @@ prepareEnvironment = function(pFable, fComplete)
 {
 	tmpComplete = (typeof(fComplete) === 'function') ? fComplete : function() {};
 
-	// Create a database connection for Meadow to use
-
-	// Check that the database exists
-
-	// Check that the database schema is in place
+	// Set the Meadow database to match what is passed in at the command-line
+	pFable.settings.MySQL.Database = pFable.settings.ParsedLogDatabase;
+	console.info('--> Setting the Database to:'+pFable.settings.ParsedLogDatabase)
 
 	tmpComplete(pFable);
 }

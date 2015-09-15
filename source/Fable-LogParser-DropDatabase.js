@@ -1,5 +1,5 @@
 /**
-* FableLogParser - Create Database
+* FableLogParser - Drop Database
 *
 * @license MIT
 *
@@ -9,15 +9,15 @@
 var libMySQL = require('mysql2');
 
 /***********
- * Create a Database
+ * Drop a Database
  *****/
-var CreateDatabase = function(pFable, fComplete)
+var DropDatabase = function(pFable, fComplete)
 {
 	// Connect to the database without a database specified
 	var tmpConnection = libMySQL.createConnection({ user: pFable.settings.MySQL.User, database: pFable.settings.MySQL.Password});
-	console.info('--> Creating database if it does not exist: '+pFable.settings.MySQL.Database);
+	console.info('--> Dropping database if it does exist: '+pFable.settings.MySQL.Database);
 
-	var tmpQuery = 'CREATE DATABASE IF NOT EXISTS `'+pFable.settings.MySQL.Database+'`;';
+	var tmpQuery = 'DROP DATABASE IF EXISTS `'+pFable.settings.MySQL.Database+'`;';
 	console.info('  > Query: [ '+tmpQuery+' ]')
 
 	tmpConnection.query(tmpQuery,
@@ -25,11 +25,11 @@ var CreateDatabase = function(pFable, fComplete)
 		{
 			if (pError)
 			{
-				console.error('  > ### ERROR Creating Database: '+pError);
+				console.error('  > ### ERROR Dropping Database: '+pError);
 			}
 			else
 			{
-				console.log(' > Database created: '+JSON.stringify(pData));
+				console.log(' > Database dropped: '+JSON.stringify(pData));
 			}
 
 			tmpConnection.end();
@@ -38,4 +38,4 @@ var CreateDatabase = function(pFable, fComplete)
 	);
 }
 
-module.exports = CreateDatabase;
+module.exports = DropDatabase;

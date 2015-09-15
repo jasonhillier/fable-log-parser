@@ -10,23 +10,20 @@
 
 console = require('better-console');
 
-var FableLogParser = function(pSettings)
+var FableLogParser = function()
 {
-	var _Fable = require('fable').new(pSettings);
+	var _Fable = require('fable').new({
+		Product: 'FableLogParser',
+		ProductVersion: require(__dirname+'/../package.json').version,
+		ConfigFile: __dirname+'/../Fable-LogParser-Config.json',
+		DefaultConfigFile: __dirname+'/../Fable-LogParser-Config-DEFAULT.json'
+	});
 
 	// Merge in any default settings that haven't been passed in
-	_Fable.settingsManager.fill(require('./FableLogParser-Options.js'));
-
-	// Make sure the settings contain an input file
-	if (_Fable.settings.InputFileName === null)
-	{
-		console.log('ERROR: You must provide at least an input filename for the DDL JSON file.');
-		console.log('       For Example: node FableLogParser.js -i "BestDDLEvar.mddl"');
-		process.exit(1);
-	}
+	_Fable.settingsManager.fill(require('./Fable-LogParser-Options.js'));
 
 	// Load the JSON, then run the command with the model passed in
-	require('./FableLogParser-Run-Prepare.js')(_Fable, require('./FableLogParser-Run-ExecuteCommand.js'));
+	require('./Fable-LogParser-Run-Prepare.js')(_Fable, require('./Fable-LogParser-Run-ExecuteCommand.js'));
 };
 
 module.exports = FableLogParser;

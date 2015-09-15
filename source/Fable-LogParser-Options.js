@@ -15,13 +15,18 @@ var _Options =
 {
 	Command: 'Info',
 
-	InputFilePath: __dirname+'/',
+	InputFilePath: __dirname+'/../',
 	InputFileName: null,
 
+	// Automatically DROP the database if it exists
+	AutomaticallyDropDatabase: false,
 	// Automatically Create the database if it doesn't exist
 	AutomaticallyCreateDatabase: false,
 	// Automatically Create the tables if they don't exist
 	AutomaticallyCreateTables: false,
+
+	// Database to Output Log Lines to
+	ParsedLogDatabase: 'FableLogParser',
 
 	// State for if CLI options are parsed.
 	Parsed: false,
@@ -52,15 +57,19 @@ var parseCommandLineOptions = function()
 
 	// The -p InputFilePath parameter (defaults to "./")
 	if (libYargs.argv.p !== undefined)
-		_Options.OutputLocation = libYargs.argv.p;
+		_Options.InputFilePath = libYargs.argv.p;
+
+	// The -x parameter (drops database if it does exist)
+	if (libYargs.argv.x !== undefined)
+		_Options.AutomaticallyDropDatabase = true;
 
 	// The -d parameter (creates database if it doesn't exist)
 	if (libYargs.argv.d !== undefined)
 		_Options.AutomaticallyCreateDatabase = true;
 
 	// The -t parameter (creates tables if they don't exist)
-	if (libYargs.argv.d !== undefined)
-		_Options.AutomaticallyCreateDatabase = true;
+	if (libYargs.argv.t !== undefined)
+		_Options.AutomaticallyCreateTables = true;
 
 	// Detect the operating system we're working in
 	if (/^win/.test(process.platform))
