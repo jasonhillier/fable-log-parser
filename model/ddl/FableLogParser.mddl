@@ -1,0 +1,35 @@
+!LogLine
+@IDLogLine
+%GUIDLogLine
+&CreateDate
+^Deleted
+$Server 24
+$ServerPID 16
+$ServerVersion 12
+#LogLevel
+&LogUTC
+$RequestURL 128
+$SessionID 24
+#IDUser -> IDUser
+#IDCustomer -> IDCustomer
+$Source 24
+$IPAddress 12
+$RequestID 24
+$Action 32
+#NormalizedYear
+#NormalizedMonth
+#NormalizedDay
+#NormalizedHour
+#NormalizedMinute
+*Datum
+
+!User
+@IDUser
+%GUIDUser
+#IDCustomer
+$UserFullName
+$UserEmail
+
+!Customer
+@IDCustomer
+%GUIDCustomer

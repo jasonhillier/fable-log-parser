@@ -1,0 +1,33 @@
+{
+    "Scope": "Customer",
+    "DefaultIdentifier": "IDCustomer",
+    "Schema": [
+        {
+            "Column": "IDCustomer",
+            "Type": "AutoIdentity"
+        },
+        {
+            "Column": "GUIDCustomer",
+            "Type": "AutoGUID"
+        }
+    ],
+    "DefaultObject": {
+        "IDCustomer": 0,
+        "GUIDCustomer": "0x0000000000000000"
+    },
+    "JsonSchema": {
+        "title": "Customer",
+        "type": "object",
+        "properties": {
+            "IDCustomer": {
+                "type": "integer"
+            },
+            "GUIDCustomer": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "IDCustomer"
+        ]
+    }
+}

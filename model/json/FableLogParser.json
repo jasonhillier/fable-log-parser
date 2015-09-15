@@ -1,0 +1,53 @@
+{
+  "Tables":
+    [
+      {
+        "TableName": "LogLine",
+        "Columns":
+        [
+          {"Column":"IDLogLine","DataType":"ID"},
+          {"Column":"GUIDLogLine","DataType":"GUID"},
+          {"Column":"CreateDate","DataType":"DateTime"},
+          {"Column":"Deleted","DataType":"Boolean"},
+          {"Column":"Server","DataType":"String","Size":"24"},
+          {"Column":"ServerPID","DataType":"String","Size":"16"},
+          {"Column":"ServerVersion","DataType":"String","Size":"12"},
+          {"Column":"LogLevel","DataType":"Numeric"},
+          {"Column":"LogUTC","DataType":"DateTime"},
+          {"Column":"RequestURL","DataType":"String","Size":"128"},
+          {"Column":"SessionID","DataType":"String","Size":"24"},
+          {"Column":"IDUser","DataType":"Numeric","Join":"IDUser"},
+          {"Column":"IDCustomer","DataType":"Numeric","Join":"IDCustomer"},
+          {"Column":"Source","DataType":"String","Size":"24"},
+          {"Column":"IPAddress","DataType":"String","Size":"12"},
+          {"Column":"RequestID","DataType":"String","Size":"24"},
+          {"Column":"Action","DataType":"String","Size":"32"},
+          {"Column":"NormalizedYear","DataType":"Numeric"},
+          {"Column":"NormalizedMonth","DataType":"Numeric"},
+          {"Column":"NormalizedDay","DataType":"Numeric"},
+          {"Column":"NormalizedHour","DataType":"Numeric"},
+          {"Column":"NormalizedMinute","DataType":"Numeric"},
+          {"Column":"Datum","DataType":"Text"}
+        ]
+      },
+      {
+        "TableName": "User",
+        "Columns":
+        [
+          {"Column":"IDUser","DataType":"ID"},
+          {"Column":"GUIDUser","DataType":"GUID"},
+          {"Column":"IDCustomer","DataType":"Numeric"},
+          {"Column":"UserFullName","DataType":"String","Size":"64"},
+          {"Column":"UserEmail","DataType":"String","Size":"64"}
+        ]
+      },
+      {
+        "TableName": "Customer",
+        "Columns":
+        [
+          {"Column":"IDCustomer","DataType":"ID"},
+          {"Column":"GUIDCustomer","DataType":"GUID"}
+        ]
+      }
+    ]
+}

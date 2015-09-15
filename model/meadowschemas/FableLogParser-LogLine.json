@@ -1,0 +1,201 @@
+{
+    "Scope": "LogLine",
+    "DefaultIdentifier": "IDLogLine",
+    "Schema": [
+        {
+            "Column": "IDLogLine",
+            "Type": "AutoIdentity"
+        },
+        {
+            "Column": "GUIDLogLine",
+            "Type": "AutoGUID"
+        },
+        {
+            "Column": "CreateDate",
+            "Type": "CreateDate"
+        },
+        {
+            "Column": "Deleted",
+            "Type": "Deleted"
+        },
+        {
+            "Column": "Server",
+            "Type": "String"
+        },
+        {
+            "Column": "ServerPID",
+            "Type": "String"
+        },
+        {
+            "Column": "ServerVersion",
+            "Type": "String"
+        },
+        {
+            "Column": "LogLevel",
+            "Type": "Integer"
+        },
+        {
+            "Column": "LogUTC",
+            "Type": "DateTime"
+        },
+        {
+            "Column": "RequestURL",
+            "Type": "String"
+        },
+        {
+            "Column": "SessionID",
+            "Type": "String"
+        },
+        {
+            "Column": "IDUser",
+            "Type": "Integer"
+        },
+        {
+            "Column": "IDCustomer",
+            "Type": "Integer"
+        },
+        {
+            "Column": "Source",
+            "Type": "String"
+        },
+        {
+            "Column": "IPAddress",
+            "Type": "String"
+        },
+        {
+            "Column": "RequestID",
+            "Type": "String"
+        },
+        {
+            "Column": "Action",
+            "Type": "String"
+        },
+        {
+            "Column": "NormalizedYear",
+            "Type": "Integer"
+        },
+        {
+            "Column": "NormalizedMonth",
+            "Type": "Integer"
+        },
+        {
+            "Column": "NormalizedDay",
+            "Type": "Integer"
+        },
+        {
+            "Column": "NormalizedHour",
+            "Type": "Integer"
+        },
+        {
+            "Column": "NormalizedMinute",
+            "Type": "Integer"
+        },
+        {
+            "Column": "Datum",
+            "Type": "String"
+        }
+    ],
+    "DefaultObject": {
+        "IDLogLine": 0,
+        "GUIDLogLine": "0x0000000000000000",
+        "CreateDate": null,
+        "Deleted": false,
+        "Server": "",
+        "ServerPID": "",
+        "ServerVersion": "",
+        "LogLevel": 0,
+        "LogUTC": null,
+        "RequestURL": "",
+        "SessionID": "",
+        "IDUser": 0,
+        "IDCustomer": 0,
+        "Source": "",
+        "IPAddress": "",
+        "RequestID": "",
+        "Action": "",
+        "NormalizedYear": 0,
+        "NormalizedMonth": 0,
+        "NormalizedDay": 0,
+        "NormalizedHour": 0,
+        "NormalizedMinute": 0,
+        "Datum": ""
+    },
+    "JsonSchema": {
+        "title": "LogLine",
+        "type": "object",
+        "properties": {
+            "IDLogLine": {
+                "type": "integer"
+            },
+            "GUIDLogLine": {
+                "type": "string"
+            },
+            "CreateDate": {
+                "type": "string"
+            },
+            "Deleted": {
+                "type": "boolean"
+            },
+            "Server": {
+                "type": "string"
+            },
+            "ServerPID": {
+                "type": "string"
+            },
+            "ServerVersion": {
+                "type": "string"
+            },
+            "LogLevel": {
+                "type": "integer"
+            },
+            "LogUTC": {
+                "type": "string"
+            },
+            "RequestURL": {
+                "type": "string"
+            },
+            "SessionID": {
+                "type": "string"
+            },
+            "IDUser": {
+                "type": "integer"
+            },
+            "IDCustomer": {
+                "type": "integer"
+            },
+            "Source": {
+                "type": "string"
+            },
+            "IPAddress": {
+                "type": "string"
+            },
+            "RequestID": {
+                "type": "string"
+            },
+            "Action": {
+                "type": "string"
+            },
+            "NormalizedYear": {
+                "type": "integer"
+            },
+            "NormalizedMonth": {
+                "type": "integer"
+            },
+            "NormalizedDay": {
+                "type": "integer"
+            },
+            "NormalizedHour": {
+                "type": "integer"
+            },
+            "NormalizedMinute": {
+                "type": "integer"
+            },
+            "Datum": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "IDLogLine"
+        ]
+    }
+}

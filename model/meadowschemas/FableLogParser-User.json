@@ -1,0 +1,57 @@
+{
+    "Scope": "User",
+    "DefaultIdentifier": "IDUser",
+    "Schema": [
+        {
+            "Column": "IDUser",
+            "Type": "AutoIdentity"
+        },
+        {
+            "Column": "GUIDUser",
+            "Type": "AutoGUID"
+        },
+        {
+            "Column": "IDCustomer",
+            "Type": "Integer"
+        },
+        {
+            "Column": "UserFullName",
+            "Type": "String"
+        },
+        {
+            "Column": "UserEmail",
+            "Type": "String"
+        }
+    ],
+    "DefaultObject": {
+        "IDUser": 0,
+        "GUIDUser": "0x0000000000000000",
+        "IDCustomer": 0,
+        "UserFullName": "",
+        "UserEmail": ""
+    },
+    "JsonSchema": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+            "IDUser": {
+                "type": "integer"
+            },
+            "GUIDUser": {
+                "type": "string"
+            },
+            "IDCustomer": {
+                "type": "integer"
+            },
+            "UserFullName": {
+                "type": "string"
+            },
+            "UserEmail": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "IDUser"
+        ]
+    }
+}
