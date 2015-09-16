@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS
         IDUser INT NOT NULL DEFAULT '0',
         IDCustomer INT NOT NULL DEFAULT '0',
         Source CHAR(24) NOT NULL DEFAULT '',
-        IPAddress CHAR(16) NOT NULL DEFAULT '',
+        IPAddress CHAR(48) NOT NULL DEFAULT '',
         RequestID CHAR(24) NOT NULL DEFAULT '',
         Action CHAR(32) NOT NULL DEFAULT '',
         NormalizedYear INT NOT NULL DEFAULT '0',

@@ -14,7 +14,7 @@ $SessionID 24
 #IDUser
 #IDCustomer
 $Source 24
-$IPAddress 16
+$IPAddress 48
 $RequestID 24
 $Action 32
 #NormalizedYear
