@@ -8,7 +8,7 @@ $ServerPID 16
 $ServerVersion 12
 #LogLevel
 &LogUTC
-$RequestURL 128
+$RequestURL 248
 $Message 200
 $SessionID 24
 #IDUser

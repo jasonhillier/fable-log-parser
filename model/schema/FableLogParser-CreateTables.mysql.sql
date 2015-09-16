@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS
         ServerVersion CHAR(12) NOT NULL DEFAULT '',
         LogLevel INT NOT NULL DEFAULT '0',
         LogUTC DATETIME,
-        RequestURL CHAR(128) NOT NULL DEFAULT '',
+        RequestURL CHAR(248) NOT NULL DEFAULT '',
         Message CHAR(200) NOT NULL DEFAULT '',
         SessionID CHAR(24) NOT NULL DEFAULT '',
         IDUser INT NOT NULL DEFAULT '0',

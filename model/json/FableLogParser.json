@@ -14,7 +14,7 @@
           {"Column":"ServerVersion","DataType":"String","Size":"12"},
           {"Column":"LogLevel","DataType":"Numeric"},
           {"Column":"LogUTC","DataType":"DateTime"},
-          {"Column":"RequestURL","DataType":"String","Size":"128"},
+          {"Column":"RequestURL","DataType":"String","Size":"248"},
           {"Column":"Message","DataType":"String","Size":"200"},
           {"Column":"SessionID","DataType":"String","Size":"24"},
           {"Column":"IDUser","DataType":"Numeric"},
