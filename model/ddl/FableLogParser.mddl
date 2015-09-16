@@ -9,7 +9,7 @@ $ServerVersion 12
 #LogLevel
 &LogUTC
 $RequestURL 248
-$Message 200
+*Message
 $SessionID 24
 #IDUser
 #IDCustomer

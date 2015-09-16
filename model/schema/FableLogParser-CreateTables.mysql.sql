@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS
         LogLevel INT NOT NULL DEFAULT '0',
         LogUTC DATETIME,
         RequestURL CHAR(248) NOT NULL DEFAULT '',
-        Message CHAR(200) NOT NULL DEFAULT '',
+        Message TEXT,
         SessionID CHAR(24) NOT NULL DEFAULT '',
         IDUser INT NOT NULL DEFAULT '0',
         IDCustomer INT NOT NULL DEFAULT '0',
