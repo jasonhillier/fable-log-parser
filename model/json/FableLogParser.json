@@ -22,7 +22,7 @@
           {"Column":"Source","DataType":"String","Size":"24"},
           {"Column":"IPAddress","DataType":"String","Size":"48"},
           {"Column":"RequestID","DataType":"String","Size":"24"},
-          {"Column":"Action","DataType":"String","Size":"32"},
+          {"Column":"Action","DataType":"String","Size":"64"},
           {"Column":"NormalizedYear","DataType":"Numeric"},
           {"Column":"NormalizedMonth","DataType":"Numeric"},
           {"Column":"NormalizedDay","DataType":"Numeric"},

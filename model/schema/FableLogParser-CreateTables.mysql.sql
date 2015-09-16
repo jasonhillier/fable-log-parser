@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS
         Source CHAR(24) NOT NULL DEFAULT '',
         IPAddress CHAR(48) NOT NULL DEFAULT '',
         RequestID CHAR(24) NOT NULL DEFAULT '',
-        Action CHAR(32) NOT NULL DEFAULT '',
+        Action CHAR(64) NOT NULL DEFAULT '',
         NormalizedYear INT NOT NULL DEFAULT '0',
         NormalizedMonth INT NOT NULL DEFAULT '0',
         NormalizedDay INT NOT NULL DEFAULT '0',

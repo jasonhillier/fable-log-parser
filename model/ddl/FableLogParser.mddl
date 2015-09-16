@@ -16,7 +16,7 @@ $SessionID 24
 $Source 24
 $IPAddress 48
 $RequestID 24
-$Action 32
+$Action 64
 #NormalizedYear
 #NormalizedMonth
 #NormalizedDay
