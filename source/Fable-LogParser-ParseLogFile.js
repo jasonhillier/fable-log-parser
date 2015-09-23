@@ -73,6 +73,7 @@ var ImportLogLines = function(pFable, pLogFileLocation, fComplete)
 			var tmpLogEntry = JSON.parse(pLine);
 
 			var tmpLogEntryTime = libMoment(tmpLogEntry.time);
+			// TODO: Make the timezone translation dynamic and ... better than this crap.
 			tmpLogPSTTime = libMoment(tmpLogEntry.time).subtract(7, 'hour');
 
 			// Now marshal the record from our parsed JSON to the record format
@@ -100,29 +101,33 @@ var ImportLogLines = function(pFable, pLogFileLocation, fComplete)
 				}
 			);
 
-			if (typeof(tmpLogEntry.datum.ClientIP) !== 'undefined')
-				tmpLogRecord.IPAddress = tmpLogEntry.datum.ClientIP;
+			// TODO: Make this marshalling dynamic, so users can describe the potential datum values per-application
+			if (tmpLogEntry.datum != null)
+			{
+				if (typeof(tmpLogEntry.datum.ClientIP) !== 'undefined')
+					tmpLogRecord.IPAddress = tmpLogEntry.datum.ClientIP;
 
-			if (typeof(tmpLogEntry.datum.RequestUUID) !== 'undefined')
-				tmpLogRecord.RequestID = tmpLogEntry.datum.RequestUUID;
+				if (typeof(tmpLogEntry.datum.RequestUUID) !== 'undefined')
+					tmpLogRecord.RequestID = tmpLogEntry.datum.RequestUUID;
 
-			if (typeof(tmpLogEntry.datum.RequestID) !== 'undefined')
-				tmpLogRecord.RequestID = tmpLogEntry.datum.RequestID;
+				if (typeof(tmpLogEntry.datum.RequestID) !== 'undefined')
+					tmpLogRecord.RequestID = tmpLogEntry.datum.RequestID;
 
-			if (typeof(tmpLogEntry.datum.SessionID) !== 'undefined')
-				tmpLogRecord.SessionID = tmpLogEntry.datum.SessionID;
+				if (typeof(tmpLogEntry.datum.SessionID) !== 'undefined')
+					tmpLogRecord.SessionID = tmpLogEntry.datum.SessionID;
 
-			if (typeof(tmpLogEntry.datum.RequestURL) !== 'undefined')
-				tmpLogRecord.RequestURL = tmpLogEntry.datum.RequestURL;
+				if (typeof(tmpLogEntry.datum.RequestURL) !== 'undefined')
+					tmpLogRecord.RequestURL = tmpLogEntry.datum.RequestURL;
 
-			if (typeof(tmpLogEntry.datum.Action) !== 'undefined')
-				tmpLogRecord.Action = tmpLogEntry.datum.Action;
+				if (typeof(tmpLogEntry.datum.Action) !== 'undefined')
+					tmpLogRecord.Action = tmpLogEntry.datum.Action;
 
-			if (typeof(tmpLogEntry.datum.IDCustomer) !== 'undefined')
-				tmpLogRecord.IDCustomer = tmpLogEntry.datum.IDCustomer;
+				if (typeof(tmpLogEntry.datum.IDCustomer) !== 'undefined')
+					tmpLogRecord.IDCustomer = tmpLogEntry.datum.IDCustomer;
 
-			if (typeof(tmpLogEntry.datum.IDUser) !== 'undefined')
-				tmpLogRecord.IDUser = tmpLogEntry.datum.IDUser;
+				if (typeof(tmpLogEntry.datum.IDUser) !== 'undefined')
+					tmpLogRecord.IDUser = tmpLogEntry.datum.IDUser;
+			}
 
 			var tmpQuery = DALLogLine.query.addRecord(tmpLogRecord);
 
