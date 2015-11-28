@@ -1,6 +1,6 @@
 {
   "name": "fable-log-parser",
-  "version": "0.1.1",
+  "version": "1.0.1",
   "description": "Log parsing for bunyan JSON log files",
   "main": "source/Fable-LogParser.js",
   "scripts": {
@@ -24,24 +24,24 @@
   },
   "homepage": "https://github.com/stevenvelozo/fable-log-parser",
   "devDependencies": {
-    "chai": "2.0.0",
-    "codeclimate-test-reporter": "0.0.4",
-    "coveralls": "^2.11.2",
+    "chai": "3.4.1",
+    "codeclimate-test-reporter": "0.1.1",
+    "coveralls": "2.11.4",
     "groc": "^0.8.0",
-    "istanbul": "0.3.5",
-    "stricture": "^1.0.1",
-    "mocha": "2.1.0"
+    "istanbul": "0.4.1",
+    "stricture": "~1.0.4",
+    "mocha": "2.3.4"
   },
   "dependencies": {
-    "async": "^0.9.0",
-    "better-console": "^0.2.4",
-    "fable": "^0.1.6",
-    "line-by-line": "^0.1.4",
-    "meadow": "^0.1.12",
-    "moment": "^2.10.6",
-    "mysql2": "^0.15.8",
-    "progress": "^1.1.8",
-    "underscore": "1.7.0",
-    "yargs": "^3.25.0"
+    "async": "^1.5.0",
+    "better-console": "0.2.4",
+    "fable": "~1.0.1",
+    "line-by-line": "0.1.4",
+    "meadow": "~1.0.1",
+    "moment": "2.10.6",
+    "mysql2": "0.15.8",
+    "progress": "1.1.8",
+    "underscore": "1.8.3",
+    "yargs": "3.30.0"
   }
 }

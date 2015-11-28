@@ -10,5 +10,16 @@ Fable Log Parser
 ## Install
 
 ```sh
-$ npm install fable-log-parser
+npm install fable-log-parser
 ```
+
+Then go to the log parser folder, and run npm install to get all the dependencies by running `npm install`.
+
+
+## Usage
+
+```sh
+node FableLogParser.js -p /home/steven/Logs/ -i MyServer.log -x -d -t
+```
+
+Which will create a database `FableLogParser` and a table `LogLine` in it which contains each line of the retold log file.  This assumes a local mysql database with the user `root` and the password being blank.  If this isn't the case, you can use the Retold pattern for overloading config files to change the settings.  More documentation to come when time allows!
