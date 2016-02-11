@@ -97,7 +97,8 @@ var ImportLogLines = function(pFable, pLogFileLocation, fComplete)
 					NormalizedDayOfYear: tmpLogPSTTime.format('DDD'),
 
 					NormalizedHour: tmpLogPSTTime.format('H'),
-					NormalizedMinute: tmpLogPSTTime.format('m')
+					NormalizedMinute: tmpLogPSTTime.format('m'),
+					Datum: JSON.stringify(tmpLogEntry.datum, null, 2)
 				}
 			);
 

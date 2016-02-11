@@ -14,7 +14,12 @@ var libMySQL = require('mysql2');
 var DropDatabase = function(pFable, fComplete)
 {
 	// Connect to the database without a database specified
-	var tmpConnection = libMySQL.createConnection({ user: pFable.settings.MySQL.User, database: pFable.settings.MySQL.Password});
+	var tmpConnection = libMySQL.createConnection({
+		user: pFable.settings.MySQL.User,
+		password: pFable.settings.MySQL.Password,
+		host: pFable.settings.MySQL.Server,
+		port: pFable.settings.MySQL.Port
+	});
 	console.info('--> Dropping database if it does exist: '+pFable.settings.MySQL.Database);
 
 	var tmpQuery = 'DROP DATABASE IF EXISTS `'+pFable.settings.MySQL.Database+'`;';

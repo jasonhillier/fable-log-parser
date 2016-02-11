@@ -14,7 +14,12 @@ var libMySQL = require('mysql2');
 var CreateDatabase = function(pFable, fComplete)
 {
 	// Connect to the database without a database specified
-	var tmpConnection = libMySQL.createConnection({ user: pFable.settings.MySQL.User, database: pFable.settings.MySQL.Password});
+	var tmpConnection = libMySQL.createConnection({
+		user: pFable.settings.MySQL.User,
+		password: pFable.settings.MySQL.Password,
+		host: pFable.settings.MySQL.Server,
+		port: pFable.settings.MySQL.Port
+	});
 	console.info('--> Creating database if it does not exist: '+pFable.settings.MySQL.Database);
 
 	var tmpQuery = 'CREATE DATABASE IF NOT EXISTS `'+pFable.settings.MySQL.Database+'`;';
