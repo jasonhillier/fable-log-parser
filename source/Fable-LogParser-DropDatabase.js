@@ -6,21 +6,18 @@
 * @author Steven Velozo <steven@velozo.com>
 * @module FableLogParser
 */
-var libMySQL = require('mysql2');
 
 /***********
  * Drop a Database
  *****/
 var DropDatabase = function(pFable, fComplete)
 {
-	// Connect to the database without a database specified
-	var tmpConnection = libMySQL.createConnection({ user: pFable.settings.MySQL.User, database: pFable.settings.MySQL.Password});
 	console.info('--> Dropping database if it does exist: '+pFable.settings.MySQL.Database);
 
 	var tmpQuery = 'DROP DATABASE IF EXISTS `'+pFable.settings.MySQL.Database+'`;';
 	console.info('  > Query: [ '+tmpQuery+' ]')
 
-	tmpConnection.query(tmpQuery,
+	pFable.MeadowMySQLConnection.query(tmpQuery,
 		function(pError, pData)
 		{
 			if (pError)
@@ -32,7 +29,6 @@ var DropDatabase = function(pFable, fComplete)
 				console.log(' > Database dropped: '+JSON.stringify(pData));
 			}
 
-			tmpConnection.end();
 			fComplete(pError);
 		}
 	);
