@@ -26,8 +26,8 @@ var CreateTables = function(pFable, fComplete)
 
 			var tmpTableCreateStatement = pData;
 			//console.log(tmpTableCreateStatement)
-		
-			pFable.MeadowMySQLConnectionPool.query(tmpTableCreateStatement, {},
+
+			pFable.MeadowMySQLConnection.query(tmpTableCreateStatement,
 				function(pError, pData)
 				{
 					if (pError)

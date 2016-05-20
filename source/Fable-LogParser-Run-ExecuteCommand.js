@@ -12,6 +12,18 @@ var libMySQL = require('mysql2');
 // Execute whatever command was passed in
 var runCommand = function(pFable)
 {
+	// Create a connection without a pool or database
+	pFable.MeadowMySQLConnection = libMySQL.createConnection
+	(
+		{
+			connectionLimit: pFable.settings.MySQL.ConnectionPoolLimit,
+			host: pFable.settings.MySQL.Server,
+			port: pFable.settings.MySQL.Port,
+			user: pFable.settings.MySQL.User,
+			password: pFable.settings.MySQL.Password
+		}
+	);
+
 	libAsync.waterfall(
 		[
 			// ## 0. Drop the Database
@@ -42,7 +54,9 @@ var runCommand = function(pFable)
 			function(fStageComplete)
 			{
 				console.info('--> Connecting to the Database: '+ pFable.settings.MySQL.Database);
-				pFable.MeadowMySQLConnectionPool = libMySQL.createPool
+				pFable.MeadowMySQLConnection.end();
+				// Create a connection without a pool or database
+				pFable.MeadowMySQLConnection = libMySQL.createConnection
 				(
 					{
 						connectionLimit: pFable.settings.MySQL.ConnectionPoolLimit,
@@ -50,8 +64,7 @@ var runCommand = function(pFable)
 						port: pFable.settings.MySQL.Port,
 						user: pFable.settings.MySQL.User,
 						password: pFable.settings.MySQL.Password,
-						database: pFable.settings.MySQL.Database,
-						namedPlaceholders: true
+						database: pFable.settings.MySQL.Database
 					}
 				);
 				// TODO: Bail on error.
@@ -73,6 +86,7 @@ var runCommand = function(pFable)
 			// ## 5. Parse the passed-in file
 			function(fStageComplete)
 			{
+				pFable.MeadowMySQLConnection.end();
 				require('./Fable-LogParser-ParseLogFile')(pFable, fStageComplete);
 			}
 		],

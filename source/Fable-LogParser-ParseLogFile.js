@@ -74,7 +74,7 @@ var ImportLogLines = function(pFable, pLogFileLocation, fComplete)
 
 			var tmpLogEntryTime = libMoment(tmpLogEntry.time);
 			// TODO: Make the timezone translation dynamic and ... better than this crap.
-			tmpLogPSTTime = libMoment(tmpLogEntry.time).subtract(7, 'hour');
+			var tmpLogPSTTime = libMoment(tmpLogEntry.time).subtract(7, 'hour');
 
 			// Now marshal the record from our parsed JSON to the record format
 			var tmpLogRecord = (
@@ -99,6 +99,7 @@ var ImportLogLines = function(pFable, pLogFileLocation, fComplete)
 					NormalizedHour: tmpLogPSTTime.format('H'),
 					NormalizedMinute: tmpLogPSTTime.format('m'),
 					Datum: JSON.stringify(tmpLogEntry.datum, null, 2)
+
 				}
 			);
 
